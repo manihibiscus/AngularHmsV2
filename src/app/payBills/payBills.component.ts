@@ -37,16 +37,16 @@ export class PayBillsComponent implements OnInit {
     }
 
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe(data=>{
-        const value=data.find((a:any)=>{
-          return a.email===this.loggedInUser.email
+        const value=data.find((item1:any)=>{
+          return item1.email===this.loggedInUser.email
         })
         if(value){
           this.refereshData=value
         }
     });
     this.http.get<any>(environment.getPaymentHistoryDetails).subscribe(val=>{
-        const history=val.find((b:any)=>{
-          return b.email===this.loggedInUser.email
+        const history=val.find((item2:any)=>{
+          return item2.email===this.loggedInUser.email
         })
         if(history){
           this.historyPayment=history
@@ -89,8 +89,8 @@ export class PayBillsComponent implements OnInit {
   // Send the message to ADMIN
   unPaid(){
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe((get)=>{
-      const getting=get.find((b:any)=>{
-        return this.loggedInUser.phone==b.phone
+      const getting=get.find((item:any)=>{
+        return this.loggedInUser.phone==item.phone
       })
       if(getting){
         this.compare(getting)
@@ -99,9 +99,9 @@ export class PayBillsComponent implements OnInit {
   }
   compare(value:any){
     this.http.get<any>(environment.getBillDetails).subscribe((val)=>{
-      const findId=val.find((a:any)=>{
+      const findId=val.find((item:any)=>{
         this.ngOnInit
-        return (a.mobileNo===value.phone && a.appointmentDate===value.appointmentDate && a.Total===value.Total)
+        return (item.mobileNo===value.phone && item.appointmentDate===value.appointmentDate && item.Total===value.Total)
       });
       if(findId){
         this.paid(findId);

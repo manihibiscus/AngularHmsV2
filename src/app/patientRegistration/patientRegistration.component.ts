@@ -69,8 +69,8 @@ export class PatientRegistrationComponent implements OnInit,IDeactivateComponent
     }
     else if(this.PatientRegister.valid){
       this.http.get<any>(environment.getPatientRegistrationDetails).subscribe(data=>{
-    const compare=data.find((a:any)=>{
-      return a.email===this.PatientRegister.value.email;
+    const compare=data.find((item:any)=>{
+      return item.email===this.PatientRegister.value.email;
     });
     if(compare){
       alert(this.PatientRegister.value.email+','+' '+"This Email was Already Registered ");

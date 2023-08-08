@@ -31,9 +31,9 @@ var nowMonth=new Date().getMonth()
 // var dis=this.calculate-now;
 // alert(nowMonth)
 this.http.get<any>(environment.getEventDetails).subscribe((data)=>{
-  const event=data.find((a:any)=>{
-    var eventDate=new Date(a.date).getDate();
-    var eventMonth=new Date(a.date).getMonth();
+  const event=data.find((item:any)=>{
+    var eventDate=new Date(item.date).getDate();
+    var eventMonth=new Date(item.date).getMonth();
     return eventDate==nowDate && eventMonth==nowMonth
   });
   if(event){

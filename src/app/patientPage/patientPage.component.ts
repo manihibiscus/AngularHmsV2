@@ -49,8 +49,8 @@ export class PatientPageComponent implements OnInit {
     this.age=this.currYear-birthYear;
     // End
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe(data=>{
-        const value=data.find((a:any)=>{
-          return a.email===this.loggedUser.email
+        const value=data.find((item:any)=>{
+          return item.email===this.loggedUser.email
         })
         if(value){
           this.refereshData=value

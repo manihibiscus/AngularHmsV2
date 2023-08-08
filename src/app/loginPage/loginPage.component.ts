@@ -42,8 +42,8 @@ export class LoginPageComponent implements OnInit {
   }
   patients() {
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe(data=>{
-      const patient=data.find((b:any)=>{
-        return b.email===this.loginForm.value.userId && b.cpassword===this.loginForm.value.password
+      const patient=data.find((item:any)=>{
+        return item.email===this.loginForm.value.userId && item.cpassword===this.loginForm.value.password
       });
 
       if(patient){
@@ -66,8 +66,8 @@ export class LoginPageComponent implements OnInit {
   }
   admins() {
     this.http.get<any>(environment.getAdminId).subscribe(res=>{
-      const users=res.find((a:any)=>{
-        return a.userId===this.loginForm.value.userId && a.password===this.loginForm.value.password
+      const users=res.find((item:any)=>{
+        return item.userId===this.loginForm.value.userId && item.password===this.loginForm.value.password
       });
       if(users){
         alert("Login Successfully");
@@ -83,8 +83,8 @@ export class LoginPageComponent implements OnInit {
   }
   doctors(){
     this.http.get<any>(environment.getDoctorIdDetails).subscribe(res=>{
-      const doctor=res.find((a:any)=>{
-        return a.userId===this.loginForm.value.userId && a.password===this.loginForm.value.password
+      const doctor=res.find((item:any)=>{
+        return item.userId===this.loginForm.value.userId && item.password===this.loginForm.value.password
       });
       if(doctor){
         alert("Login Successfully");

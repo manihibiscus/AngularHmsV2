@@ -75,8 +75,8 @@ export class SlotComponent implements OnInit {
   findToPatient(details:any){
 
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe((data)=>{
-      const getId=data.find((a:any)=>{
-        return a.phone===details.mobileNo
+      const getId=data.find((item:any)=>{
+        return item.phone===details.mobileNo
       });
       if(getId){
         this.patchToPatient(details,getId.id)

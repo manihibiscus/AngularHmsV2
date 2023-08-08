@@ -122,8 +122,8 @@ export class GenerateBillsComponent {
   showPatientBill:any=""
   showBill(billData:any){
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe(value=>{
-      const userBill=value.find((a:any)=>{
-        return a.phone===billData.mobileNo
+      const userBill=value.find((item:any)=>{
+        return item.phone===billData.mobileNo
       });
       if(userBill){
         this.showPatientBill=userBill;

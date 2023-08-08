@@ -1,11 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { AppointmentService } from '../appointment.service';
 import { AppointmentCancelService } from '../appointmentCancel.service';
 import { UserServiceService } from '../userService.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RemarkServiceService } from './remarkService.service';
-import { PatientPageComponent } from '../patientPage/patientPage.component';
 import { Router } from '@angular/router';
 import {Observable,map} from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -114,8 +112,8 @@ export class ViewSlotComponent {
   appStatus:any="Accepted for appointment"
   acceptToPatient(acceptMobileNo:any){
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe(value=>{
-      const patient=value.find((a:any)=>{
-        return a.phone===acceptMobileNo
+      const patient=value.find((item:any)=>{
+        return item.phone===acceptMobileNo
     });
     var body={
       appStatus:this.appStatus
@@ -202,8 +200,8 @@ export class ViewSlotComponent {
   }
   showRemark(details:any){
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe(value=>{
-      const patientRemark=value.find((a:any)=>{
-        return a.phone===details.cMobileNo
+      const patientRemark=value.find((item:any)=>{
+        return item.phone===details.cMobileNo
       });
       if(patientRemark){
         this.sendRemarkToPatient(patientRemark,details)

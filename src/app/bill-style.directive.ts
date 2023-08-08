@@ -4,7 +4,7 @@ import { Directive, ElementRef} from '@angular/core';
   selector: '[appBillStyle]'
 })
 export class BillStyleDirective {
-
+  value:any=""
   constructor(private eleRef:ElementRef) {
     eleRef.nativeElement.style.color="green"
    }

@@ -156,8 +156,8 @@ activateDb(){
 doctorDetails:any=""
 doctorName(){
   this.http.get<any>("http://localhost:3000"+'/'+this.appointment.storeField).subscribe(data=>{
-    const doc=data.find((a:any)=>{
-      return a.doctorName==this.appointmentDocName
+    const doc=data.find((item:any)=>{
+      return item.doctorName==this.appointmentDocName
     });
     if(doc){
       this.doctorDetails=doc;
