@@ -6,8 +6,8 @@ import { GetLoginService } from '../getLogin.service';
 import { UserServiceService } from '../userService.service';
 import { Location } from '@angular/common';
 import { PatientModel } from '../patientPage/patient.model';
-import { environment } from 'src/environments/environment';
-
+import { environment } from 'src/environments/environment.development';
+import { NGXLogger } from 'ngx-logger';
 @Component({
   selector: 'app-loginPage',
   templateUrl: './loginPage.component.html',
@@ -16,7 +16,9 @@ import { environment } from 'src/environments/environment';
 export class LoginPageComponent implements OnInit {
 
 
-  constructor(private service:GetLoginService, private formBuilder:FormBuilder, private http:HttpClient, private router:Router, private userService:UserServiceService, private location: Location) { }
+  constructor(private service:GetLoginService,
+    private logger:NGXLogger,
+    private formBuilder:FormBuilder, private http:HttpClient, private router:Router, private userService:UserServiceService, private location: Location) { }
   logindetails:any="";
   ngOnInit(){
 
@@ -40,13 +42,18 @@ export class LoginPageComponent implements OnInit {
   }
   patients() {
     this.http.get<any>(environment.getPatientRegistrationDetails).subscribe(data=>{
-      const patient=data.find((item:any)=>{
-        return item.email===this.loginForm.value.userId && item.cpassword===this.loginForm.value.password
+      const patient=data.find((b:any)=>{
+        return b.email===this.loginForm.value.userId && b.cpassword===this.loginForm.value.password
       });
 
       if(patient){
         alert("Login Successfully");
-        // this.loginForm.reset();
+        const logData = {
+          message : `User Logged In : ${this.loginForm.value.userId}`,
+          timestamp : new Date().toLocaleString()
+        }
+        this.http.post(environment.getLogger, logData).subscribe({
+        });
           this.userLogObj.userLogged=patient;
           this.userService.loggedInUser = patient;
           sessionStorage.setItem('loggedInUser', JSON.stringify(patient));
@@ -59,8 +66,8 @@ export class LoginPageComponent implements OnInit {
   }
   admins() {
     this.http.get<any>(environment.getAdminId).subscribe(res=>{
-      const users=res.find((item:any)=>{
-        return item.userId===this.loginForm.value.userId && item.password===this.loginForm.value.password
+      const users=res.find((a:any)=>{
+        return a.userId===this.loginForm.value.userId && a.password===this.loginForm.value.password
       });
       if(users){
         alert("Login Successfully");
@@ -76,8 +83,8 @@ export class LoginPageComponent implements OnInit {
   }
   doctors(){
     this.http.get<any>(environment.getDoctorIdDetails).subscribe(res=>{
-      const doctor=res.find((item:any)=>{
-        return item.userId===this.loginForm.value.userId && item.password===this.loginForm.value.password
+      const doctor=res.find((a:any)=>{
+        return a.userId===this.loginForm.value.userId && a.password===this.loginForm.value.password
       });
       if(doctor){
         alert("Login Successfully");

@@ -4,7 +4,6 @@ import { AdminHeaderComponent } from './adminHeader/adminHeader.component';
 import { AdminPageComponent } from './adminPage/adminPage.component';
 import { AppointmentRequestComponent } from './appointmentRequest/appointmentRequest.component';
 import { ContactUsPageComponent } from './contactUsPage/contactUsPage.component';
-import { DoctorPageComponent } from './doctorPage/doctorPage.component';
 import { GeneralDoctorComponent } from './generalDoctor/generalDoctor.component';
 
 import { HomePageComponent } from './homePage/homePage.component';
@@ -19,7 +18,6 @@ import { SlotComponent } from './slot/slot.component';
 import { PayBillsComponent } from './payBills/payBills.component';
 import { ForgotPasswordComponent } from './forgotPassword/forgotPassword.component';
 import { ConformationGuard } from './conformation.guard';
-import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { SlotHistoryComponent } from './slotHistory/slotHistory.component';
 import { PatientHistoryComponent } from './patientHistory/patientHistory.component';
 import { DoctorViewHistoryComponent } from './doctorViewHistory/doctorViewHistory.component';
@@ -79,10 +77,6 @@ component:ViewQueryComponent
   component:PatientPageComponent
 },
 {
-  path:"doctorhome",
-  component:DoctorPageComponent
-},
-{
   path:"patientregister",
   component:PatientRegistrationComponent,
   canDeactivate:[ConformationGuard]
@@ -110,10 +104,6 @@ component:ViewQueryComponent
 {
   path:"forgotPassword",
   component:ForgotPasswordComponent
-},
-{
-  path:"addDoctor",
-  component:AddDoctorComponent
 },
 {
   path:"slotHistory",

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ContactServiceService } from '../contactService.service';
 import { NgForm } from '@angular/forms';
+import { contectPageImages } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-contactUsPage',
@@ -9,6 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ContactUsPageComponent implements OnInit {
 
+  contactImg=contectPageImages
   constructor(private contactService:ContactServiceService) { }
   // querySubmit=this.fb.group({
   //   email:[,[Validators.required]],

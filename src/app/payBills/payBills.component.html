@@ -52,7 +52,7 @@
           <!-- <td>{{refereshData.phone}}</td> -->
           <td>{{refereshData.consultingFee}}</td>
           <td>{{refereshData.otherFee}}</td>
-          <td style="color: green;font-weight: bolder;">{{refereshData.Total}}</td>
+          <td appShowBill>{{refereshData.Total}}</td>
         </tr>
       </tbody>
     </table>
@@ -60,7 +60,7 @@
   <div>
   <div class="whole">
     <div class="split1">
-      <img src="../../assets/Image/PayBills.jpg" style="width: 500px;height: 500px;" alt="">
+      <img [src]="payBillImg.paymentImg" style="width: 500px;height: 500px;" alt="">
     </div>
   <div class="split2">
   <h2 style="text-align: center;color: #1e1468;background-color: #f5f5f5;margin: auto;width: 35%;padding:5px;border-radius: 10px;">Make Payment</h2>

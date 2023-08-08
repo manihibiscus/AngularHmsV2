@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TimingService } from './timing.service';
 import { count } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment, homePageImages } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-homePage',
@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HomePageComponent implements OnInit {
 
+  homePageImg:any=homePageImages
   constructor(private service:TimingService, private http:HttpClient) { }
 //   interval:any=setInterval(()=>{
 //     this.closepopup();

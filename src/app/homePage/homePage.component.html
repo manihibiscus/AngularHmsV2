@@ -1,14 +1,14 @@
 <app-header class="fixed"></app-header>
-<!-- <div class="scroll"> -->
+
+<!-- flash -->
 <dialog [open]="flash" class="dialog">
-      <img src="../../assets/multiply.png" style="width: 30px;height: 30px;position: absolute; right: 15px;" (click)="closeBanner()">
-      <img src="../../assets/lantern.png" style="width: 100px;height: 100px;position: absolute; left: 15px;" (click)="closeBanner()" *ngIf="eventTitile=='Wish you Many More Happy Christmas!' || eventTitile=='Wish you Happy New Year!' ">
-      <img src="../../assets/lantern.png" style="width: 100px;height: 100px;position: absolute; right: 45px;" (click)="closeBanner()"*ngIf="eventTitile=='Wish you Many More Happy Christmas!' || eventTitile=='Wish you Happy New Year!' ">
+      <img [src]="homePageImg.cancelImage" style="width: 30px;height: 30px;position: absolute; right: 15px;" (click)="closeBanner()">
+      <img [src]="homePageImg.ballown"style="width: 100px;height: 100px;position: absolute; left: 15px;" (click)="closeBanner()" *ngIf="eventTitile=='Wish you Many More Happy Christmas!' || eventTitile=='Wish you Happy New Year!' ">
+      <img [src]="homePageImg.ballown"style="width: 100px;height: 100px;position: absolute; right: 45px;" (click)="closeBanner()"*ngIf="eventTitile=='Wish you Many More Happy Christmas!' || eventTitile=='Wish you Happy New Year!' ">
       <img [src]="link" alt="">
    <h2 style="text-align: center;">{{eventTitile}}</h2>
 <h3>{{con1}}</h3>
 <h3>{{con2}}</h3>
-<!-- <img src="../../assets/blood.jpg" alt="" style="width: 200px; height: 200px; position: absolute;"> -->
 </dialog >
 <div>
   <div [ngClass]="{view:blur==true}" >
@@ -17,10 +17,7 @@
 
 
 <div class="webbody">
-  <!-- <img src="../../assets/Image/Untitled.png" /> -->
-  <img src="../../assets/Image/19836.jpg" style="width: 800px;height: 500px;" />
-
-<!-- <h3>Welcome to Mani Medical Care</h3> -->
+  <img [src]="homePageImg.frontImage" style="width: 800px;height: 500px;" />
 </div>
 <div class="welcome">
   <div class="B1">
@@ -28,21 +25,16 @@
   <h2 style="text-align: left; padding-left: 10px;color: #233863;font-family: 'Poppins', sans-serif;">"We Value Your Health</h2>
   <h2 style="text-align: lext; padding-left: 20px;color: #233863;font-family: 'Poppins', sans-serif;" > Care for Your Smile"</h2>
   <pre style="font-size: 15px;text-align: lext; padding-left: 20px;font-weight: bolder;color: #238ca1;">
-<img src="../../assets/Image/Icons/stethoscope.png" alt=""> This appication is maily focus on make a appointment
+<img [src]="homePageImg.stethoscope" alt=""> This appication is maily focus on make a appointment
     and user can view details accrodingly.
     <br>
-<img src="../../assets/Image/Icons/stethoscope.png" alt=""> If you want an doctor's appointment,
+<img [src]="homePageImg.stethoscope" alt=""> If you want an doctor's appointment,
     register first and then login. <span><a routerLink="/login" style="color: #233863;">click here!</a></span>
     <br>
-<img src="../../assets/Image/Icons/stethoscope.png" alt=""> User can view the medical field and doctor details
+<img [src]="homePageImg.stethoscope" alt=""> User can view the medical field and doctor details
     in medical specialist field. <span><a routerLink="/medicalSpec" style="color: #233863;">click here!</a></span>
   </pre>
   </div>
-  <!-- <div class="B2">
-    <button style="font-size: 25px; color: #238ca1; margin-left: 140px;">
-      Click Here to view more <i class="fas fa-angle-down"></i>
-    </button>
-  </div> -->
 
 </div>
 </div>
@@ -50,7 +42,7 @@
   <div class="div1">
     <div class="center">
     <h4>DEAN</h4>
-    <img src="../../assets/Image/Icons/dean (1).png" />
+    <img [src]="homePageImg.dean" />
     <h5>Dr. MANIMARAN S MS</h5>
     <p style="padding: 10px 10px;">A Dean of Medicine manages administrative functions
       of the college of medical. Develops college strategic initiatives
@@ -63,7 +55,7 @@
   <div class="div2">
 <div class="center">
   <h4>FOUNDER</h4>
-  <img src="../../assets/Image/Icons/old-man (1).png" />
+  <img [src]="homePageImg.founder"/>
   <h5>Dr. Thiru. SATHYA MURTHI S</h5>
   <P style="padding: 10px 10px;">
     Large hospitals, consisting of a thousand beds or
@@ -76,7 +68,7 @@
   <div class="div3">
     <div class="center">
       <h4>CHIEF DOCTOR</h4>
-      <img src="../../assets/Image/Icons/chief.png" />
+      <img [src]="homePageImg.chief" />
       <h5>Dr. TAMIL SELVI M MD MS</h5>
       <P style="padding: 10px 10px;">Ensuring that patients receive the highest standard of
          medical care. Being responsible for the performance of physicians
@@ -98,14 +90,14 @@
 
   </div>
   <div class="ProBox2">
-    <img src="../../assets/Image/healthcare (2).png" alt="">
+    <img [src]="homePageImg.healthShield" alt="">
   </div>
 </div>
 <br>
 <div class="segment2">
   <div class="B1">
     <div class="center">
-      <img src="../../assets/Image/Icons/healthcare.png" alt=""><h4>HEALTH CARE</h4>
+      <img [src]="homePageImg.healthCare" alt=""><h4>HEALTH CARE</h4>
     </div>
   </div>
 
@@ -114,10 +106,10 @@
   <h4>NEWS PAD</h4>
   <div>
     <marquee behavior="" direction="up" scrollamount="2" style="color: #233863;">
-      <p> <img src="../../assets/Image/Icons/arrow.png" /> The art of medicine consists of amusing the patient while nature cures the disease.</p>
-      <p> <img src="../../assets/Image/Icons/arrow.png" />Wherever the art of Medicine is loved, there is also a love of Humanity.</p>
-      <p> <img src="../../assets/Image/Icons/arrow.png" />Flowers always make people better, happier, and more helpful; they are sunshine, food and medicine to the mind.</p>
-      <p> <img src="../../assets/Image/Icons/arrow.png" />A medicine cat has no time for doubt. Put your energy into today and stop worrying about the past.</p>
+      <p> <img [src]="homePageImg.arrow" /> The art of medicine consists of amusing the patient while nature cures the disease.</p>
+      <p> <img [src]="homePageImg.arrow" />Wherever the art of Medicine is loved, there is also a love of Humanity.</p>
+      <p> <img [src]="homePageImg.arrow" />Flowers always make people better, happier, and more helpful; they are sunshine, food and medicine to the mind.</p>
+      <p> <img [src]="homePageImg.arrow" />A medicine cat has no time for doubt. Put your energy into today and stop worrying about the past.</p>
     </marquee>
   </div>
   </div>
@@ -126,25 +118,5 @@
 
 </div>
 
-<!-- </div> -->
-
-  <!-- <div class="container">
-  <div id="box1"><p>The art of medicine consists of amusing the patient while nature cures the disease.</p></div>
-  <div id="box2"><p>A medicine cat has no time for doubt. Put your energy into today and stop worrying about the past.</p>
-
-  </div>
-</div>0
-
-<div class="container2">
-
-  <div id="box3"><p>Wherever the art of Medicine is loved, there is also a love of Humanity. </p>
-  </div>
-  <div id="box4"><p>Flowers always make people better, happier, and more helpful; they are sunshine, food and medicine to the mind.</p></div>
-</div>
-
-<div class="container3">
-  <div id="box5">5</div>
-  <div id="box6">6</div>
-</div> -->
 
 <app-footer></app-footer>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorDetailsService } from '../doctorDetails.service';
+import { medicalFieldImages } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-medialSpecPage',
@@ -8,6 +9,7 @@ import { DoctorDetailsService } from '../doctorDetails.service';
 })
 export class MedialSpecPageComponent implements OnInit {
 
+  mediacalFieldImg=medicalFieldImages
   constructor(private service:DoctorDetailsService) { }
 
   ngOnInit() {

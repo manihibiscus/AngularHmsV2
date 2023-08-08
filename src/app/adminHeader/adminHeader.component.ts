@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../userService.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { homeHeaderImages } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-adminHeader',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class AdminHeaderComponent implements OnInit {
 
   constructor(private user:UserServiceService,private http:HttpClient,private route:Router) { }
-
+  adminHeaderImg=homeHeaderImages
   ngOnInit() {
   }
   logout() {
