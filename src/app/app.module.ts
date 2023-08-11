@@ -55,10 +55,10 @@ import { BillStyleDirective } from './bill-style.directive';
       ForgotPasswordComponent,
       CurrencyPipe,
       SlotHistoryComponent,
+      BillStyleDirective,
       PatientHistoryComponent,
       BmiCalcularPipe,
       DoctorViewHistoryComponent,
-      BillStyleDirective
    ],
   imports: [
     BrowserModule,

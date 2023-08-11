@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminHeaderComponent } from './adminHeader/adminHeader.component';
 import { AdminPageComponent } from './adminPage/adminPage.component';
 import { AppointmentRequestComponent } from './appointmentRequest/appointmentRequest.component';
 import { ContactUsPageComponent } from './contactUsPage/contactUsPage.component';
